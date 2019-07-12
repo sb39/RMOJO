@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+}
+main{
+    height:100vh;
+}
+#j-container{
+    height:500px;
+    width:500px;
+}
+#profile-pic{
+    border-radius:50px;
+}
+#comment{
+    resize:none;
+}

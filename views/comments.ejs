@@ -1,0 +1,48 @@
+<% include partials/header %>
+<main class="container-fluid">
+    <div class="container col-md-12 h-100 d-flex">
+        <div class="card my-auto mr-auto ml-auto" style="width: 35rem;">
+             
+            <div class="card-body">
+              <div class="row container justify-content-center">
+                    <img src="<%= user.thumbnail %>" class="ml-auto mr-auto" height="100" width="100" id="profile-pic">
+              </div>
+              <a href="/auth/logout" class="row container justify-content-center">  Logout</a>
+              <hr>
+              <form class="form-group container">
+                <div class="row">
+                    <label for="comment"><h6 class="text-secondary h6-responsive">Comment below:</h6></label>
+                    <input class="form-control" type="text" value="<%= user.username %>" readonly></input>
+                    <textarea class="form-control mt-1 " id="comment" rows="3"></textarea>
+                </div>
+                <div class="row mt-1">
+                    <button type="submit" class="btn btn-sm btn-primary ml-auto"><i class="fas fa-plus-circle"></i> Post Comment</button>
+                </div>
+                </form>
+                <h6 class="text-secondary h6-responsive">All Comments :</h6>
+                <hr>
+                <div class="row col-md-12 container">
+                    <div class="col-md-8">
+                        <div class="row p-0 m-0 font-weight-bold"><%= user.username %></div>
+                        <div class="row p-0 m-0">
+                            <p class="text-secondary text-justify ">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate consectetur ut nobis cum nemo fuga nesciunt natus quos et veniam explicabo placeat esse exercitationem, nisi nihil totam dolores neque! Laboriosam!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 my-auto mx-auto">
+                        <div class="row p-0 m-0">
+                            <button type="submit" class="btn btn-sm btn-outline-success px-3 mx-auto" name="like"><i class="far fa-thumbs-up"></i> Like</button>
+                
+                            <button type="submit" class="btn btn-sm btn-outline-danger px-2 mx-auto m-1" name="dislike"><i class="far fa-thumbs-down"></i> Dislike</button>
+                        </div>
+                        
+                    </div>
+                </div>
+              </form>
+             </div>
+          </div>
+    </div>
+</main>
+
+<% include partials/footer %>
