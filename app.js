@@ -7,11 +7,15 @@ const cookieSession = require('cookie-session')
 const passportSetup = require('./config/passport-setup')
 const keys = require('./config/keys')
 const path = require('path')
+const bodyParser = require('body-parser')
 
 const app = express()
 
 //view engine
 app.set('view engine', 'ejs')
+
+//body parser
+app.use(bodyParser.urlencoded({extended : false}));
 
 //session setup
 app.use(cookieSession({

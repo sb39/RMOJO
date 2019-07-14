@@ -9,16 +9,16 @@
               </div>
               <a href="/auth/logout" class="row container justify-content-center">  Logout</a>
               <hr>
-              <form class="form-group container">
-                <div class="row">
-                    <label for="comment"><h6 class="text-secondary h6-responsive">Comment below:</h6></label>
-                    <input class="form-control" type="text" value="<%= user.username %>" readonly></input>
-                    <textarea class="form-control mt-1 " id="comment" rows="3"></textarea>
-                </div>
-                <div class="row mt-1">
-                    <button type="submit" class="btn btn-sm btn-primary ml-auto"><i class="fas fa-plus-circle"></i> Post Comment</button>
-                </div>
-                </form>
+            <form class="form-group container" action="/comments/feedcomment" method="POST">
+            <div class="row">
+                <label for="comment"><h6 class="text-secondary h6-responsive">Comment below:</h6></label>
+                <input class="form-control" type="text" name="name" value="<%= user.username %>" readonly></input>
+                <textarea class="form-control mt-1 " id="comment" rows="3" name="comment" placeholder="type your comment here"></textarea>
+            </div>
+            <div class="row mt-1">
+                <button type="submit" class="btn btn-sm btn-primary ml-auto"><i class="fas fa-plus-circle"></i> Post Comment</button>
+            </div>
+            </form>
                 <h6 class="text-secondary h6-responsive">All Comments :</h6>
                 <hr>
                 <div class="row col-md-12 container">

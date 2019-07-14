@@ -1,4 +1,5 @@
 const router = require('express').Router()
+const Comment = require('../models/user-comments')
 
 const authCheck = (req, res, next) => {
     if(!req.user) {
@@ -12,6 +13,21 @@ const authCheck = (req, res, next) => {
 router.get('/', authCheck, (req, res) => {
     res.render('comments', {
         user : req.user 
+    })
+})
+router.post('/feedcomment', (req, res) => {
+    new Comment({
+        username : req.body.name,
+        comment : req.body.comment
+    }).save().then((log) => {
+        console.log("comment saved")
+        res.redirect('/comments')
+    })
+})
+
+router.get('/feedcomment',authCheck, (req, res) => {
+    res.render('comments', {
+        user : req.user
     })
 })
 

@@ -3,9 +3,8 @@ const Schema = mongoose.Schema;
 
 const commentShema = new Schema({
     username : String, 
-    googleId : String,
-    thumbnail : String
+    comment  : String
 });
-const Comment = mongoose.model('user', commentShema);
+const Comment = mongoose.model('comment', commentShema);
 
 module.exports = Comment;
