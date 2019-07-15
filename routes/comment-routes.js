@@ -10,9 +10,22 @@ const authCheck = (req, res, next) => {
     }
 }
 
-router.get('/', authCheck, (req, res) => {
-    res.render('comments', {
-        user : req.user 
+// router.get('/', authCheck, (req, res) => {
+//     res.render('comments', {
+        
+//     })
+// })
+router.get('/',authCheck, (req, res) => {
+    var resultArray = []
+    Comment.find({}, (err, docs) => {
+        if(err)
+        {
+            throw err
+        }
+        else{
+            res.render('comments', {items : docs, user : req.user })
+            
+        }
     })
 })
 router.post('/feedcomment', (req, res) => {
@@ -21,7 +34,7 @@ router.post('/feedcomment', (req, res) => {
         comment : req.body.comment
     }).save().then((log) => {
         console.log("comment saved")
-        res.redirect('/comments')
+        res.redirect('/comments/')
     })
 })
 

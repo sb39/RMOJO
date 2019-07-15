@@ -21,23 +21,30 @@
             </form>
                 <h6 class="text-secondary h6-responsive">All Comments :</h6>
                 <hr>
-                <div class="row col-md-12 container">
-                    <div class="col-md-8">
-                        <div class="row p-0 m-0 font-weight-bold"><%= user.username %></div>
-                        <div class="row p-0 m-0">
-                            <p class="text-secondary text-justify ">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate consectetur ut nobis cum nemo fuga nesciunt natus quos et veniam explicabo placeat esse exercitationem, nisi nihil totam dolores neque! Laboriosam!
-                            </p>
+                <div class="row" id="list">
+                <% items.forEach(function(e){ %>
+                <ul class="list-group col-md-12 list-group-flush">
+                    <li class="list-group-item">
+                    <div class="row col-md-12 container">
+                        <div class="col-md-8">
+                            <div class="row p-0 m-0 font-weight-bold"><%= e.username %></div>
+                            <div class="row p-0 m-0">
+                                <p class="text-secondary text-justify required">
+                                        <%= e.comment %>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 my-auto mx-auto">
+                            <div class="row p-0 m-0">
+                                <button type="submit" class="btn btn-sm btn-outline-success px-3 mx-auto" name="like"><i class="far fa-thumbs-up"></i> Like</button>
+                    
+                                <button type="submit" class="btn btn-sm btn-outline-danger px-2 mx-auto m-1" name="dislike"><i class="far fa-thumbs-down"></i> Dislike</button>
+                            </div> 
                         </div>
                     </div>
-                    <div class="col-md-4 my-auto mx-auto">
-                        <div class="row p-0 m-0">
-                            <button type="submit" class="btn btn-sm btn-outline-success px-3 mx-auto" name="like"><i class="far fa-thumbs-up"></i> Like</button>
-                
-                            <button type="submit" class="btn btn-sm btn-outline-danger px-2 mx-auto m-1" name="dislike"><i class="far fa-thumbs-down"></i> Dislike</button>
-                        </div>
-                        
-                    </div>
+                    </li>
+                </ul>
+                <% }) %>
                 </div>
               </form>
              </div>
