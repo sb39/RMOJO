@@ -1,1 +1,1 @@
-# [📲 RENTOMOJO APP](https://rentomojoapp.herokuapp.com)
+# [📲 UICLONE APP](https://rentomojoapp.herokuapp.com)
